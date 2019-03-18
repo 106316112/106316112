@@ -1,27 +1,51 @@
 ﻿<!DOCTYPE html>
 <html>
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title></title>
+</head>
 <body>
 
-姓名:<input type="text" name="name" size="10"><br><br>
-<label for="bookdate">出生日期：</label>
-<input type="date" id="bookdate" name="birthday" placeholder="2014-09-18"><br><br>
-連絡電話:<input type="text" name="telphone" size="20"><br><br>
-行動電話:<input type="text" name="cellphone" size="20"><br><br>
-性別:<input type="radio" name="gender" value="男">男
-<input type="radio" name="gender" value="女">女<br><br>
-
-<script language="javascript">
-function  CheckForm()
-{  
-   if(name.value=="")
-      alert("請輸入您姓名!");
+<script type="text/javascript">
+function check()
+{
+   if(reg.name.value == "") 
+   {
+      alert("未輸入姓名");
+   }
+   else if(reg.year.value == ""|| reg.month.value == "00"|| reg.day.value == "00")
+   {
+      alert("未輸入完整生日日期");
+   }
+   else if(reg.telphone.value=="")
+   {
+      alert("未輸入完整連絡電話");
+   }
+   else if(reg.cellphone.value=="")
+   {
+      alert("未輸入完整行動電話");
+   }
+   else if(!reg.gender[0].checked && !reg.gender[1].checked)
+   {
+      alert("未選擇性別");
+   }
+   else reg.submit();
 }
 </script>
 
-<input type="button" value="check" onclick="CheckForm()">
+<form name="reg" method="post" action="index.html">
+姓名:<input type="text" name="name"><br><br>
+<label for="bookdate">出生日期：</label>
+<input type="date" id="bookdate" name="birthday" placeholder="2014-09-18"><br><br>
+連絡電話:<input type="text" name="telphone"><br><br>
+行動電話:<input type="text" name="cellphone"><br><br>
+性別:<input type="radio" name="gender" value="男">男
+<input type="radio" name="gender" value="女">女<br><br>
 
-<input type="submit" value="Load">
-<input type="submit" value="Get">
+<input type="button" value="傳送" onClick="check()" />;
+
+<input type="submit" value="Load"/>
+<input type="submit" value="Get"/>
 </form> 
 </body>
 </html>
