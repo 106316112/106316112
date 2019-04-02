@@ -1,13 +1,14 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
 <body style="background-image:url(https://i2.wp.com/beauty.gobahub.com/wp-content/uploads/2018/11/326b6a716413300284851afb42c63c78.jpg?w=537&ssl=1.gif);width:100%;height:100%;" >
-    <form id="a" action="http://203.64.84.113/x/RQ_RS.aspx" method="post"  name="reg"><br>
+    <form id="orderForm1" action="http://203.64.84.113/x/RQ_RS.aspx" method="post"  name="form1" >
+<form action="/action_page.php">
+
+<form name="frm" method="GET" action=“Save.php">
 
 姓名:<input id="nID" name="name" type="text" size="16"/><br>
 電話:<input id="tID" name="tellphone" type="text" size="16" /><br>
@@ -44,7 +45,7 @@ function check()
 <script type="text/javascript">
 function Input()
 {
-   var ntext = document.getElementById("nIFD");
+   var ntext = document.getElementById("nID");
    ntext.value = "Chalmers";
    var ttext = document.getElementById("tID");
    ttext.value = "12345678";
