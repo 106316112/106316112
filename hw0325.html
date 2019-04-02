@@ -1,0 +1,76 @@
+﻿
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body style="background-image:url(https://i2.wp.com/beauty.gobahub.com/wp-content/uploads/2018/11/326b6a716413300284851afb42c63c78.jpg?w=537&ssl=1.gif);width:100%;height:100%;" >
+    <form id="a" action="http://203.64.84.113/x/RQ_RS.aspx" method="post"  name="reg"><br>
+
+姓名:<input id="nID" name="name" type="text" size="16"/><br>
+電話:<input id="tID" name="tellphone" type="text" size="16" /><br>
+性別:<input id="g" type="radio" name="gender" value="男">男
+<input id="gl" type="radio" name="gender" value="女">女<br><br>
+<label for="bookdate">出生日期：</label>
+<input type="date" id="bookdate" name="birthday" placeholder="2014-09-18"><br><br>
+
+<script>
+function check()
+{
+   if(reg.name.value == "") 
+   {
+      alert("未輸入姓名");
+   }
+   else if(reg.tellphone.value=="")
+   {
+      alert("未輸入電話");
+   }
+   else if(!reg.gender[0].checked && !reg.gender[1].checked)
+   {
+      alert("未選擇性別");
+   }
+   else if(reg.birthday.value == "")
+   {
+      alert("未輸入完整生日日期");
+   }
+   else reg.submit();
+}
+</script>
+<input type="button" value="送出" onclick="check()" /> &nbsp;&nbsp;&nbsp;
+<input type="reset" value="清除" /><br/><br/>
+
+<script type="text/javascript">
+function Input()
+{
+   var ntext = document.getElementById("nIFD");
+   ntext.value = "Chalmers";
+   var ttext = document.getElementById("tID");
+   ttext.value = "12345678";
+   document.getElementById("g").checked = true;
+   var dtext = document.getElementById("bookdate");
+   dtext.value = "1999-01-01";
+}
+</script>
+
+<button onclick= "Input()">輸入資料</button>
+<script type="text/javascript">
+function Show()
+{
+   alert('姓名:'+reg.name.value);
+   alert('電話:'+reg.tellphone.value);
+   var radionum = document.getElementById("a").gender;
+   for(var i=0;i<radionum.length;i++)
+   {
+      if(radionum[i].checked){gender = radionum[i].value}
+   }
+      alert('性別:'+gender); 
+   alert('生日:'+reg.birthday.value);
+}
+</script>
+<button onclick= "Show()">顯示資料</button>
+
+</form> 
+</body>
+</html>
