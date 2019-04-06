@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>健康小站</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body style="background-image: url(https://i2.wp.com/beauty.gobahub.com/wp-content/uploads/2018/11/326b6a716413300284851afb42c63c78.jpg?w=537&ssl=1.gif); width: 100%; height: 100%;">
+    <form id="a" action="http://203.64.84.113/x/RQ_RS.aspx" method="post" name="reg"><br />
+    <font face="標楷體">
+    <font color="black"><h2>正確洗手七字訣</h2>
+        <ol id="health"></ol>
+        <script>
+            var things = ["內","外","夾","弓","大","立","腕"];
+            var text = "", i;
+            for (i = 0; i < things.length; i++)
+            {
+                text += "<li>";
+                text += things[i];
+                text += "</li>";
+            }
+            document.getElementById("health").innerHTML = text;
+        </script>
+        <select onchange="isSelected(this.value);" id="Hth"> 
+        <option value="1" style="font-family:標楷體;">內：將雙手手心互相搓洗。</option> 
+        <option value="2" style="font-family:標楷體;">外：仔細搓洗手背。</option> 
+        <option value="3" style="font-family:標楷體;">夾：十指交錯仔細搓洗指縫。</option> 
+        <option value="4" style="font-family:標楷體;">弓：手指微微弓起，讓手指背與手心互相搓揉。</option> 
+        <option value="5" style="font-family:標楷體;">大：別忽略搓洗大拇指與虎口處。</option> 
+        <option value="6" style="font-family:標楷體;">立：指尖容易藏污納垢，可與手心互相搓揉。</option> 
+        <option value="7" style="font-family:標楷體;">腕：手腕處若有手錶、飾品可先取下，洗手時連手腕一併搓洗。</option> 
+        </select>
+        <script>
+            function isSelected(value) {
+                var HName;
+                var Hth = document.getElementById("Hth");
+                //獲取選中的城市名稱 
+                for (i = 0; i < Hth.length; i++) 
+                {
+                    if (Hth[i].selected == true) 
+                    {
+                    	HName = Hth[i].innerText;
+                        alert("洗手步驟之一:" + HName);
+                    }
+                }
+            }
+        </script>
+        <hr color="yellow" size="10" />
+        </font>
+        <font color="blue">
+        <h2>BMI小工具</h2>
+        <div>
+            身高:<input id="h" name="high" type="text" /><br />
+            體重:<input id="w" name="weight" type="text" /><br />
+        </div>
+        <script>
+            function check() 
+            {
+                if (reg.high.value == "") 
+                    alert("未輸入身高!");
+                else if (reg.weight.value == "") 
+                    alert("未輸入體重!");
+                if (isNaN(reg.high.value) || reg.high.value < 0 || reg.high.value > 250) 
+                    alert("身高請輸入正確數字!");
+                else if (isNaN(reg.weight.value) || reg.weight.value < 0 || reg.weight.value > 250) 
+                    alert("體重請輸入正確數字!");
+                if (reg.high.value > 0 && reg.high.value < 250 && reg.weight.value > 0 && reg.weight.value < 250) 
+                {
+                    var BMI;
+                    BMI = (reg.weight.value) / ((reg.high.value/100) * (reg.high.value/100));
+                    if (BMI < 18.5) 
+                        alert("BMI:" + BMI + "您的體重過輕!");
+                    else if (BMI >= 18.5 && BMI < 24) 
+                        alert("BMI:" + BMI + "   " + "您的體重位於健康體位!");
+                    else if (BMI >= 24 && BMI < 27) 
+                    	alert("BMI:" + BMI + "   " + "您的體重過重!"); 
+                    else if (BMI >= 27 && BMI < 30)  
+                    	alert("BMI:" + BMI + "   " + "您的體重輕度肥胖!"); 
+                    else if (BMI >= 30 && BMI < 35) 
+                    	alert("BMI:" + BMI + "   " + "您的體重中度肥胖!"); 
+                    else 
+                    	alert("BMI:" + BMI + "   " + "您的體重重度肥胖!"); 
+                }
+            }
+        </script><br/>
+        <input type="button" value="送出" onclick="check()" style="font-family:標楷體;"/><br/>
+        <hr color="clay" size="10" />
+        </font>
+        <font color="brown"><br/>
+        <h2>個人生活習慣檢視表</h2>
+<table>
+    <tr>
+    <td>
+       <font face="標楷體">
+        1.喜歡參與運動 : 
+        <input type="radio" name="q" value="喜歡參與運動"/>是
+        <input type="radio" name="q" value="不喜歡參與運動"/>否
+        </font>
+    </td>
+  </tr>
+  <tr>
+    <th>
+        <font face="標楷體">
+        2.每週運動次數 : 
+        <input type="checkbox" name="q1" value="運動次數:小於三次" />小於三次
+        <input type="checkbox" name="q1" value="運動次數:剛剛好三次"/>剛剛好三次
+        <input type="checkbox" name="q1" value="運動次數:不只三次"/>不只三次
+        </font>
+    </th>
+  </tr>
+  <tr>
+    <td>
+       <font face="標楷體">
+        3.每次運動時間 : 
+        <input type="checkbox" name="q2" value="運動時間:30分鐘"/>30分鐘以內
+        <input type="checkbox" name="q2" value="運動時間:30-60分鐘"/>30-60分鐘
+        <input type="checkbox" name="q2" value="運動時間:大於60分鐘"/>大於60分鐘
+        </font>
+    </td>
+  </tr>
+  <tr>
+    <td>
+       <font face="標楷體">
+        4.興趣運動項目 : 
+        <input type="checkbox" name="q3" value="興趣項目:慢跑"/>慢跑
+        <input type="checkbox" name="q3" value="興趣項目:球類"/>球類
+        <input type="checkbox" name="q3" value="興趣項目:瑜珈"/>瑜珈
+        <input type="checkbox" name="q3" value="興趣項目:健身"/>健身
+        <input type="checkbox" name="q3" value="興趣項目:游泳"/>游泳
+        </font>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        <font face="標楷體">
+        5.運動主要原因 : 
+        <input type="checkbox" name="q4" value="運動原因:增肌"/>增肌
+        <input type="checkbox" name="q4" value="運動原因:個人興趣"/>個人興趣
+        <input type="checkbox" name="q4" value="運動原因:消遣娛樂"/>消遣娛樂
+        <input type="checkbox" name="q4" value="運動原因:比賽訓練"/>比賽訓練
+        <input type="checkbox" name="q4" value="運動原因:減脂"/>減脂
+        </font>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        <font face="標楷體">
+        6.每天睡覺時間 : 
+        <input type="checkbox" name="q5" value="睡覺時間:晚上11點以前"/>晚上11點以前
+        <input type="checkbox" name="q5" value="睡覺時間:晚上12-2點之間"/>晚上12-2點之間
+        <input type="checkbox" name="q5" value="睡覺時間:晚上3點以後"/>晚上3點以後
+        </font>
+    </td>
+  </tr>
+  <tr>
+    <td>
+        <font face="標楷體">
+        7.每天起床時間 : 
+        <input type="checkbox" name="q6" value="起床時間:早上6點前"/>早上6點前
+        <input type="checkbox" name="q6" value="起床時間:早上7-9點之間"/>早上7-9點之間
+        <input type="checkbox" name="q6" value="起床時間:早上10點以後"/>早上10點以後
+        </font>
+    </td>
+  </tr>
+</table><br/>
+            <input type="button" name="sure" id="sure" value="確定" style="font-family:標楷體;"/>
+            <hr color="red" size="10" />
+        </font>
+            <ol id="End"></ol>
+    <script language="Javascript">
+        var btn = document.getElementById("sure");
+        btn.onclick = function () 
+        {
+            var obj = document.getElementsByName("q");
+            var selected = [];
+            for (var i = 0; i < obj.length; i++) 
+            {
+                if (obj[i].checked) 
+                {
+                    selected.push(obj[i].value);
+                }
+            }
+            var obj = document.getElementsByName("q1");
+            var selected1 = [];
+            for (var i1 = 0; i1 < obj.length; i1++) 
+            {
+                if (obj[i1].checked) 
+                {
+                    selected1.push(obj[i1].value);
+                }
+            }
+            var obj = document.getElementsByName("q2");
+            var selected2 = [];
+            for (var i2 = 0; i2 < obj.length; i2++) 
+            {
+                if (obj[i2].checked) 
+                {
+                    selected2.push(obj[i2].value);
+                }
+            }
+            var obj = document.getElementsByName("q3");
+            var selected3 = [];
+            for (var i3 = 0; i3 < obj.length; i3++) 
+            {
+                if (obj[i3].checked) 
+                {
+                    selected3.push(obj[i3].value);
+                }
+            }
+            var obj = document.getElementsByName("q4");
+            var selected4 = [];
+            for (var i4 = 0; i4 < obj.length; i4++) 
+            {
+                if (obj[i4].checked) 
+                {
+                    selected4.push(obj[i4].value);
+                }
+            }
+            var obj = document.getElementsByName("q5");
+            var selected5 = [];
+            for (var i5 = 0; i5 < obj.length; i5++) 
+            {
+                if (obj[i5].checked) 
+                {
+                    selected5.push(obj[i5].value);
+                }
+            }
+            var obj = document.getElementsByName("q6");
+            var selected6 = [];
+            for (var i6 = 0; i6 < obj.length; i6++) 
+            {
+                if (obj[i6].checked) 
+                {
+                    selected6.push(obj[i6].value);
+                }
+            }
+            var answers = [selected.join(), selected1.join(), selected2.join(), selected3.join(), selected4.join(), selected5.join(), selected6.join()];
+            var text1 = "", i;
+            for (i = 0; i < answers.length; i++) 
+            {
+                text1 += "<li>";
+                text1 += answers[i];
+                text1 += "</li>";
+            }
+            document.getElementById("End").innerHTML = text1;
+        };
+    </script>
+        </font>
+    </form>
+</body>
+</html>
